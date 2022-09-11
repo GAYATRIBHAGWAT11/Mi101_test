@@ -86,8 +86,8 @@ function foodBox(meal){
             <h3>Follow the steps:</h3>
             <p>${meal.strInstructions}</p>
         </div>
-        <div class = "recipe-link">
-            <a href = "${meal.strYoutube}" target = "_blank">Watch Recipe on YOUTUBE</a>
+        <div class = "recipe-link ">
+            <a color="black" href = "${meal.strYoutube}" target = "_blank">Watch Recipe on YOUTUBE</a>
         </div>
     `;
     mealDetailsContent.innerHTML = html;
