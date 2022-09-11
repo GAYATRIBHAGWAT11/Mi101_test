@@ -1,17 +1,20 @@
 // 3ed18f7e
-let searchButton=document.querySelector("#search")
-searchButton.addEventListener('click',()=>{
-console.log('button pressed');
-sendApiRequest()
-})
+// let searchButton=document.querySelector("#search")
+// searchButton.addEventListener('click',()=>{
+// console.log('button pressed');
+// sendApiRequest()
+// })
 
-async function sendApiRequest(){
-    let API_ID="3ed18f7e";
-    let API_KEY="0e0a73291197cbc4985d6ef479f1527b"
-    let response=await fetch(``)
-    console.log(response);
-}
+// async function sendApiRequest(){
+//     // let API_KEY="OEOTh3lAHUIrfDlfgy2NEnTccGfDaLFa4ovom7gJ"
+//     let response=await fetch(`https://api.nasa.gov/planetary/apod?api_key=OEOTh3lAHUIrfDlfgy2NEnTccGfDaLFa4ovom7gJ`)
+//     console.log(response);
+//     let data=response.json()
+//     console.log(data);
+//     ApiData(data)
+// }
 
-function ApiData(data){
+// function ApiData(data){
+// document.querySelector('#content').innerHTML=data.
+// }
 
-}
