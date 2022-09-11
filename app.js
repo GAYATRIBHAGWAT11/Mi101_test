@@ -23,20 +23,20 @@ const mealList = document.getElementById('myfood');
 const mealDetailsContent = document.querySelector('.myfood-details-content');
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
-// event listeners
-searchBtn.addEventListener('click', getMealList);
-mealList.addEventListener('click', getMealRecipe);
+searchBtn.addEventListener('click', getFood);
+mealList.addEventListener('click', getRecipe);
 recipeCloseBtn.addEventListener('click', () => {
     mealDetailsContent.parentElement.classList.remove('showRecipe');
 });
 
 
-// get meal list that matches with the ingredients
-function getMealList(){
+// geting food according our searches
+function getFood(){
     let searchInputTxt = document.getElementById('search-input').value;
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         let html = "";
         if(data.meals){
             data.meals.forEach(meal => {
@@ -52,14 +52,25 @@ function getMealList(){
                     </div>
                 `;
             });
-            mealList.classList.remove('notFound');
+            mealList.classList.remove('blank');
         } else{
-            html = "Sorry, we didn't find any meal!";
-            mealList.classList.add('notFound');
+            html = "Sorry,try later!";
+            mealList.classList.add('blank');
         }
 
         mealList.innerHTML = html;
     });
+}
+
+// get recipe of the food
+function getRecipe(e){
+    e.preventDefault();
+    if(e.target.classList.contains('recipe-btn')){
+        let mealItem = e.target.parentElement.parentElement;
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
+        .then(response => response.json())
+        .then(data => foodBox(data.meals));
+    }
 }
 
 

@@ -23,10 +23,8 @@ body{
     outline: 0;
     font-size: 1.05rem;
 }
-.text{
-    opacity: 0.8;
-}
 .title{
+    background-color: white;
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -75,11 +73,6 @@ body{
     background: var(--tenne-tawny);
     color: #fff;
     border: none;
-    transition: all 0.4s linear;
-    -webkit-transition: all 0.4s linear;
-    -moz-transition: all 0.4s linear;
-    -ms-transition: all 0.4s linear;
-    -o-transition: all 0.4s linear;
 }
 .search-btn:hover{
     background: var(--tenne-tawny-dark);
@@ -92,7 +85,6 @@ body{
 }
 .myfood-item{
     overflow: hidden;
-    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
     margin: 2rem 0;
 }
 .myfood-img img{
@@ -100,6 +92,8 @@ body{
     display: block;
 }
 .myfood-name{
+    font-style: italic;
+    background-color: white;
     padding: 1.5rem 0.5rem;
 }
 .myfood-name h3{
@@ -107,66 +101,34 @@ body{
 }
 .recipe-btn{
     text-decoration: none;
-    color: #fff;
-    background: var(--tenne-tawny);
+    color: white;
+    background-color: black;
     font-weight: 500;
     font-size: 1.1rem;
     padding: 0.75rem 0;
     display: block;
     width: 175px;
     margin: 1rem auto;
-    border-radius: 2rem;
-    /* -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem; */
-    transition: all 0.4s linear;
-    -webkit-transition: all 0.4s linear;
-    -moz-transition: all 0.4s linear;
-    -ms-transition: all 0.4s linear;
-    -o-transition: all 0.4s linear;
 }
 .recipe-btn:hover{
-    background: var(--tenne-tawny-dark);
+    background: blue;
 }
 
-/* meal details */
 .myfood-details{
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
+    top: 10%;
+    left: 25%;
     color: #fff;
     background: var(--tenne-tawny);
     border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 80%;
     overflow-y: scroll;
     display: none;
     padding: 2rem 0;
 }
-.myfood-details::-webkit-scrollbar{
-    width: 10px;
-}
-.myfood-details::-webkit-scrollbar-thumb{
-    background: #f0f0f0;
-    border-radius: 2rem;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
-}
 
-
-/* js related */
+/* js function */
 .showRecipe{
     display: block;
 }
@@ -174,23 +136,15 @@ body{
 .myfood-details-content{
     margin: 2rem;
 }
-.myfood-details-content p:not(.recipe-category){
-    padding: 1rem 0;
-}
 .recipe-close-btn{
     position: absolute;
     right: 2rem;
     top: 2rem;
     font-size: 1.8rem;
-    background: #fff;
+    color: red;
     border: none;
     width: 35px;
     height: 35px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,10 +161,7 @@ body{
     display: inline-block;
     padding: 0.2rem 0.5rem;
     border-radius: 0.3rem;
-    -webkit-border-radius: 0.3rem;
-    -moz-border-radius: 0.3rem;
-    -ms-border-radius: 0.3rem;
-    -o-border-radius: 0.3rem;
+
 }
 .recipe-category{
     background: #fff;
@@ -218,11 +169,7 @@ body{
     color: var(--tenne-tawny);
     display: inline-block;
     padding: 0.2rem 0.5rem;
-    border-radius: 0.3rem;
-    -webkit-border-radius: 0.3rem;
-    -moz-border-radius: 0.3rem;
-    -ms-border-radius: 0.3rem;
-    -o-border-radius: 0.3rem;
+
 }
 .recipe-instruct{
     padding: 1rem 0;
@@ -231,10 +178,7 @@ body{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+
     margin: 0 auto;
     display: block;
 }
@@ -246,10 +190,7 @@ body{
     font-size: 1.2rem;
     font-weight: 700;
     transition: all 0.4s linear;
-    -webkit-transition: all 0.4s linear;
-    -moz-transition: all 0.4s linear;
-    -ms-transition: all 0.4s linear;
-    -o-transition: all 0.4s linear;
+
 }
 .recipe-link a:hover{
     opacity: 0.8;
@@ -257,7 +198,7 @@ body{
 
 
 /*  */
-.notFound{
+.blank{
     grid-template-columns: 1fr!important;
     color: var(--tenne-tawny);
     font-size: 1.8rem;
@@ -293,4 +234,7 @@ body{
     #myfood{
         grid-template-columns: repeat(3, 1fr);
     }
+}
+.myfood-wrapper{
+    background-image: url('data:image/png;base64,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');
 }
