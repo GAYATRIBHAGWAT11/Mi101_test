@@ -74,3 +74,22 @@ function getRecipe(e){
 }
 
 
+
+// create a box
+function foodBox(meal){
+    console.log(meal);
+    meal = meal[0];
+    let html = `
+        <h2 class = "recipe-title">${meal.strMeal}</h2>
+        <p class = "recipe-category">${meal.strCategory}</p>
+        <div class = "recipe-instruct">
+            <h3>Follow the steps:</h3>
+            <p>${meal.strInstructions}</p>
+        </div>
+        <div class = "recipe-link">
+            <a href = "${meal.strYoutube}" target = "_blank">Watch Recipe on YOUTUBE</a>
+        </div>
+    `;
+    mealDetailsContent.innerHTML = html;
+    mealDetailsContent.parentElement.classList.add('showRecipe');
+}
